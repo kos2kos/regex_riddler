@@ -1,0 +1,12 @@
+<h1><%= "Challenges!!!  "%></h1>
+<h4><%= @challenge.name %></h4>
+<%= form_tag "/result", method: :post do |f| %>
+  <h4><%= @challenge.trial %></h4>
+  <%= hidden_field_tag :id, "#{@challenge.id}" %>
+  <p><%= "Description: Do The thing" %></p>
+
+
+  <p>/<%= text_field_tag :regex, nil, placeholder: "enter regex here!" %>/</p>
+  <%= submit_tag "Submit" %>
+
+<%end%>

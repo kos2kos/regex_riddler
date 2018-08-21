@@ -15,7 +15,7 @@ class Challenge < ApplicationRecord
   end
 
   def result
-      self.solution == match_value(self.to_regex)
+      self.solution.split(',') == match_value(self.to_regex)
   end
 
   def to_s
