@@ -7,3 +7,9 @@
   <%= f.text_field :email %><br>
   <%= f.submit %>
 <% end %>
+<br>
+<br>
+
+<%= form_tag user_path(@user), method: "delete" do %>
+  <%= submit_tag "Delete User" %>
+<% end %>

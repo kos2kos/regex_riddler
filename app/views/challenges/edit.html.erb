@@ -12,6 +12,6 @@
 <br>
 <br>
 
-<%= form_tag "/challenge", method: :delete do %>
+<%= form_tag challenge_path(@challenge), method: "delete" do %>
   <%= submit_tag "Delete Challenge" %>
 <% end %>
