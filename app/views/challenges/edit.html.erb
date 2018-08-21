@@ -9,3 +9,9 @@
   <%= f.submit %>
 
 <%end%>
+<br>
+<br>
+
+<%= form_tag "/challenge", method: :delete do %>
+  <%= submit_tag "Delete Challenge" %>
+<% end %>

@@ -36,6 +36,7 @@ class ChallengesController < ApplicationController
   end
 
   def delete
+    Challenge.find(params[:id]).destroy
   end
 
   private
