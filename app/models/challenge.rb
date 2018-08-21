@@ -2,21 +2,24 @@ class Challenge < ApplicationRecord
   has_many :user_challenges
   has_many :users, through: :user_challenges
 
+  def to_regex(regex = self.regex)
+    Regexp.new(regex)
+  end
   def match_value(regex)
-    @test_string.scan(regex).captures
+    self.trial.scan(regex).captures
   end
 
   def total_matches
-      self.match_value(@test_string).length
+      self.match_value(self.trial).length
   end
 
-  def result
-      @solution == match_value
+  def result(regex)
+      self.solution == match_value(self.to_regex(regex))
   end
 
   def to_s
-      puts "Challenge: #{challenge_name}"
-      puts "String: #{test_string}"
-      puts "Solution: #{solution}"
+      puts "Challenge: #{self.name}"
+      puts "String: #{self.trial}"
+      puts "Solution: #{self.solution}"
   end
 end

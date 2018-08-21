@@ -19,7 +19,7 @@ class ChallengesController < ApplicationController
   def create
     @challenge = Challenge.create(challenge_params)
 
-    if @challenge.save
+    if @challenge.result(params[:regex]) && @challenge.save
       redirect_to challenge_path(@challenge)
     else
       render :new
@@ -27,7 +27,9 @@ class ChallengesController < ApplicationController
 
   end
 
+
   def update
+
     @challenge = Challenge.find(params[:id])
     @challenge.update(challenge_params)
     if @challenge.save
