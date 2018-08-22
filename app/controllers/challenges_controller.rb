@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new(challenge_params)
+    byebug
     if @challenge.result && @challenge.save
       redirect_to challenge_path(@challenge)
     else
@@ -45,7 +46,7 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:name, :trial, :solution, :regex)
+    params.require(:challenge).permit(:name, :trial, :solution, :regex, :user_id)
   end
 
 end

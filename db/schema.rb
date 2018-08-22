@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_195922) do
+ActiveRecord::Schema.define(version: 2018_08_22_205204) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "name"
@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_195922) do
     t.string "solution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "legit"
     t.string "regex"
-    t.integer "owner_id"
+    t.integer "user_id"
   end
 
   create_table "user_challenges", force: :cascade do |t|
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_195922) do
     t.boolean "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "score"
   end
 
   create_table "users", force: :cascade do |t|

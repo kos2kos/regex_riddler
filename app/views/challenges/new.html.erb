@@ -1,5 +1,5 @@
 <%= form_for @challenge do |f| %>
-
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :trial %><br>

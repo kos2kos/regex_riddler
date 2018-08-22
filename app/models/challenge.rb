@@ -1,7 +1,7 @@
 class Challenge < ApplicationRecord
   has_many :user_challenges
   has_many :users, through: :user_challenges
-  belongs_to :owner, class_name:"User", foreign_key: "user_id"
+  belongs_to :user
 
   def to_regex(regex = self.regex)
     # byebug
