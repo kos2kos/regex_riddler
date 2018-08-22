@@ -2,9 +2,12 @@ class PlayController < ApplicationController
 
   def play
     @challenge = Challenge.all.sample
+
+    render :play, layout: "play"
   end
 
   def result
+    puts params
     @challenge = Challenge.find(params[:id])
     @challenge.regex = params[:regex]
     # byebug
