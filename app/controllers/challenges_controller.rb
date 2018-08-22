@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
-
+  #TODO: only allow challenges creator to edit their challenge
+  before_action :authorized, except:[:index, :show]
   def index
     @challenges = Challenge.all
   end
