@@ -1,6 +1,7 @@
 class Challenge < ApplicationRecord
   has_many :user_challenges
   has_many :users, through: :user_challenges
+  belongs_to :owner, class_name:"User", foreign_key: "user_id"
 
   def to_regex(regex = self.regex)
     # byebug
@@ -23,4 +24,6 @@ class Challenge < ApplicationRecord
       puts "String: #{self.trial}"
       puts "Solution: #{self.solution}"
   end
+
+
 end

@@ -9,7 +9,6 @@ class PlayController < ApplicationController
   def result
     @challenge = Challenge.find(params[:id])
     @challenge.regex = params[:regex]
-    # byebug
     render :result
   end
 
