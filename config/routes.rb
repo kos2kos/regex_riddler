@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_challenges
+  resources :user_challenges, only: [:index, :show]
   resources :challenges
   resources :users
 

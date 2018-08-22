@@ -14,7 +14,7 @@ class PlayController < ApplicationController
     if params[:regex] == "" || params[:regex] == nil || @result == false
       @score = 0
     else
-      @score = params[:time_left] * 100
+      @score = params[:time_left].to_i * 100
     end
 
     if session[:user_id]

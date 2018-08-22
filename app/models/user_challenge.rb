@@ -1,4 +1,6 @@
 class UserChallenge < ApplicationRecord
-  belong_to :user
-  belong_to :challenges
+  belongs_to :user
+  belongs_to :challenges
+
+  
 end

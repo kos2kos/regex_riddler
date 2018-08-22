@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_205204) do
+ActiveRecord::Schema.define(version: 2018_08_22_224123) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_205204) do
     t.datetime "updated_at", null: false
     t.string "regex"
     t.integer "user_id"
+    t.string "description"
   end
 
   create_table "user_challenges", force: :cascade do |t|
