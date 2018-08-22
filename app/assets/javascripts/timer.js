@@ -54,19 +54,20 @@ function CountDownTimer(duration, granularity) {
 window.onload = function () {
     var display = document.querySelector('#time'),
         time_left = document.querySelector('#time_left')
-        timer = new CountDownTimer(5),
-        timeObj = CountDownTimer.parse(5);
+        total_time = 120
+        timer = new CountDownTimer(total_time),
+        timeObj = CountDownTimer.parse(total_time);
 
     format(timeObj.minutes, timeObj.seconds);
     
     timer.onTick(format);
     timer.start();
-    setTimeout("document.getElementById(\"play_form\").submit()",5000);
+    setTimeout("document.getElementById(\"play_form\").submit()",total_time * 1000);
     
     function format(minutes, seconds) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = minutes + ':' + seconds;
-        time_left.value = minutes + ':' + seconds;
+        time_left.value = (minutes*60) + seconds;
     }
 }
