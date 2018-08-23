@@ -1,6 +1,9 @@
 class SessionController < ApplicationController
     before_action :authorized, only:[:destroy]
     def new
+        if session[:user_id]
+            redirect_to user_path(session[:user_id])
+        end
     end
 
     def create
