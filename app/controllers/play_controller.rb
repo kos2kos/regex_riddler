@@ -10,7 +10,6 @@ class PlayController < ApplicationController
     @challenge = Challenge.find(params[:id])
     @challenge.regex = params[:regex]
     @result = @challenge.result
-
     if params[:regex] == "" || params[:regex] == nil || @result == false
       @score = 0
     else
@@ -22,7 +21,6 @@ class PlayController < ApplicationController
       total_score = @user.total_score + @score
       @user.update(total_score: total_score)
     end
-
     render :result
   end
 
