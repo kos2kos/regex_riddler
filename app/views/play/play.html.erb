@@ -1,12 +1,12 @@
-<h1><%= "Challenges!!!  "%></h1>
-<h4><%= @challenge.name %></h4>
-<%= form_tag "/result", method: :post do |f| %>
-  <h4><%= @challenge.trial %></h4>
+<div class="text-center">
+  <br><br><br><br>
+<%= form_tag "/result", class: 'form-signin text-center', method: :post do |f| %>
+  <h1 class="display-7"><%= @challenge.trial %></h1>
   <%= hidden_field_tag :id, "#{@challenge.id}" %>
-  <p><%= "Description: Do The thing" %></p>
-
-
-  <p>/<%= text_field_tag :regex, nil, placeholder: "enter regex here!" %>/</p>
-  <%= submit_tag "Submit" %>
-
+  <h6><%= "Description: Do The thing" %></h6>
+  <%= label_tag :regex, nil, class:"sr-only" %><br>
+  <p><%= text_field_tag :regex, nil, class: "form-control",
+    placeholder: "/ enter regex here! /" %></p>
+  <button type="submit" class="btn btn-lg btn-primary btn-block"> Submit </button>
 <%end%>
+</div>

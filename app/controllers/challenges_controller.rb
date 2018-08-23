@@ -3,6 +3,7 @@ class ChallengesController < ApplicationController
   before_action :authorized, except:[:index, :show]
   def index
     @challenges = Challenge.all
+    @i = 0
   end
 
   def show
