@@ -16,10 +16,11 @@ class PlayController < ApplicationController
     else
       @score = params[:time_left].to_i * 100
     end
-
     if session[:user_id]
       @user = User.find(session[:user_id])
-      @user.user_challenges.create(user_id: @user, challenge_id: @challenge.id, result: @result, score: @score)
+      @user.user_challenges.create(user_id: @user, challenge: @challenge, result: @result, score: @score)
+      total_score = @user.total_score + @score
+      @user.update(total_score: total_score)
     end
 
     render :result

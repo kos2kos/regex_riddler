@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   
     def authorized
         unless session[:user_id]
-            redirect_to login_path unless session[:user_id]
+            redirect_to login_path
         end
     end
 end

@@ -1,6 +1,9 @@
 class ChallengesController < ApplicationController
   #TODO: only allow challenges creator to edit their challenge
   before_action :authorized, except:[:index, :show]
+  before_action only: [:edit, :update, :destroy] do
+    edit_authorized(Challenge.find(params[:id]))
+  end
   def index
     @challenges = Challenge.all
   end
@@ -15,7 +18,6 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new(challenge_params)
-    byebug
     if @challenge.result && @challenge.save
       redirect_to challenge_path(@challenge)
     else
@@ -46,7 +48,13 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:name, :trial, :solution, :regex, :user_id)
+    params.require(:challenge).permit(:name, :trial, :solution, :regex, :user_id, :description)
+  end
+
+  def edit_authorized(resource)
+    unless session[:user_id] == resource.user_id
+      redirect_to login_path
+    end
   end
 
 end

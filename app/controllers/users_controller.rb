@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :authorized, except:[:new, :create]
+  before_action only: [:edit, :update, :destroy] do
+    edit_authorized(User.find(params[:id]))
+  end
   def index
     @users = User.all
   end
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user)
     else
@@ -45,6 +48,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :username, :email, :password)
+  end
+
+  def edit_authorized(resource)
+    unless session[:user_id] == resource.id
+      redirect_to login_path
+    end
   end
 
 
