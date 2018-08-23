@@ -13,3 +13,52 @@
 <%= form_tag user_path(@user), method: "delete" do %>
   <%= submit_tag "Delete User" %>
 <% end %>
+
+
+
+
+
+
+<style>
+.width {
+   /* These two lines are counted as one :-)       */
+   width: 100%;
+   max-width: 800px;
+   padding: 15px;
+   margin: auto;
+
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 175px;
+  width: 175px;
+}
+</style>
+
+<div class="width">
+<div class="jumbotron ">
+  <div class="container">
+    <h1 class="display-2"><%= @user.name %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= image_tag 'nkosi.jpg', class: "rounded" %>
+    </h1>
+    <hr class="my-3">
+    <h1 class="display-7"><%= @user.username %><br></h1>
+    <h1 class="display-8"><%= @user.email %><br></h1>
+    <p class="lead"><br>
+      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Play</a>
+      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Upload</a>
+      <a class="btn btn-primary btn-lg" href="<%="http://localhost:3000/users/#{@user.id}/edit/"%>" role="button">Edit</a>
+    </p>
+  </div>
+</div>
+</div>
