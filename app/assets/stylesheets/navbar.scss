@@ -1,0 +1,16 @@
+.nav-bar-img{
+  width: 42.5px;
+  height: 42.5px ;
+}
+
+.bg-orange {
+  background-color: #f7931e;
+}
+
+.nav-item a.nav-link.custom-link {
+    flex: 1 100%;
+    color: rgba(255, 255, 255, 1.0);
+    &:hover {
+      color: #31444b;
+    }
+}

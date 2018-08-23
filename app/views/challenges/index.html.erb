@@ -1,4 +1,19 @@
-<% @challenges.each do |challenge| %>
-  <li><%= link_to challenge.name, challenge_path(challenge) %></li>
-
-<% end %>
+<table class="table table-hover table-light">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Difficulty</th>
+      <th scope="col">Title</th>
+      <th scope="col">Creator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @challenges.each do |challenge| %>
+      <th scope="row"> <%= @i+1 %></th>
+      <%@i = @i + 1%>
+      <td>Easy</td>
+      <td><%= link_to challenge.name, challenge_path(challenge) %></td>
+      <td>@kos</td>
+    <% end %>
+  </tbody>
+</table>

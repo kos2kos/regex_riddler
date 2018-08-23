@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 <% if @result%>
   You win!
   <p>Score: <%= @score %></p>
+=======
+<% if @challenge.result%>
+  <div class="alert alert-success text-center" role="alert">
+  <h4 class="alert-heading">🏆You Win🏆</h4>
+  <p>Aww yeah, shouts out you</p>
+  <hr>
+</div>
+
+>>>>>>> bootstrap
 <% else %>
-  You lose!
+  <div class="alert alert-danger text-center" role="alert">
+  <h4 class="alert-heading">Sorry.... 😔</h4>
+  <p>Try again </p>
+  <hr>
 <%end%>

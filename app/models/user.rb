@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   has_secure_password
+
+  def url_edit
+    "http://localhost:3000/user/#{self.id}/edit"
+  end
 end

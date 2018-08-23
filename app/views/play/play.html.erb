@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1><%= "Challenges!!!  "%></h1>
 <h4><%= @challenge.name %></h4>
 <%= form_tag "/result", method: :post, id: "play_form" do |f| %>
@@ -11,4 +12,17 @@
   <input type="hidden" name="time_left" id="time_left" value="45">
   <%= submit_tag "Submit" %>
 
+=======
+<div class="text-center">
+  <br><br><br><br>
+<%= form_tag "/result", class: 'form-signin text-center', method: :post do |f| %>
+  <h1 class="display-7"><%= @challenge.trial %></h1>
+  <%= hidden_field_tag :id, "#{@challenge.id}" %>
+  <h6><%= "Description: Do The thing" %></h6>
+  <%= label_tag :regex, nil, class:"sr-only" %><br>
+  <p><%= text_field_tag :regex, nil, class: "form-control",
+    placeholder: "/ enter regex here! /" %></p>
+  <button type="submit" class="btn btn-lg btn-primary btn-block"> Submit </button>
+>>>>>>> bootstrap
 <%end%>
+</div>

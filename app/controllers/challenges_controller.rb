@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
   end
   def index
     @challenges = Challenge.all
+    @i = 0
   end
 
   def show
