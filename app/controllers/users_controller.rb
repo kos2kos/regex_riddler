@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.image = Image.all.sample.name
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new

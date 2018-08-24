@@ -61,8 +61,9 @@ window.onload = function () {
     format(timeObj.minutes, timeObj.seconds);
     
     timer.onTick(format);
+    // setTimeout("document.getElementById(\"play_form\").submit()",total_time * 100);
+    setInterval(function(){document.getElementById("play_form").submit()}, total_time * 1000);
     timer.start();
-    setTimeout("document.getElementById(\"play_form\").submit()",total_time * 1000);
     
     function format(minutes, seconds) {
         minutes = minutes < 10 ? "0" + minutes : minutes;

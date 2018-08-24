@@ -26,6 +26,10 @@
   <div class="alert alert-danger text-center alert-width" role="alert">
   <h4 class="alert-heading">Sorry.... 😔</h4>
   <p>Try again </p>
+
+  <p>Regex: /<span style="color: red;"><%= @challenge.regex %></span>/</p>
+  <p>Expected: <span style="color: red;"><%= @challenge.solution.split(',').map {|word| word.strip} %></span></p>
+  <p>Got: <span style="color: red;"><%= @challenge.match_value(/#{@challenge.regex}/) %></span></p>
   <hr>
 <%end%>
 <br>

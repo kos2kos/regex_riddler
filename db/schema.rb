@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_132841) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.integer "total_score", default: 0
-    t.string "image", default: "32"
+    t.string "image", default: " "
   end
 
 end
