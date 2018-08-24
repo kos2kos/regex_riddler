@@ -1,3 +1,20 @@
-<% @users.each do |user| %>
-  <li><%= link_to user.name, user_path(user) %></li>
-<% end %>
+<style>
+  .title_font {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 1.0);
+}
+</style>
+
+  <% @users.each_slice(4) do |user| %>
+
+    <div class="card-deck p-5 m-2">
+      <% user.each do |user| %>
+        <div class="card" style="max-width: 18rem; max-height: : 15rem;">
+          <div class="card-title font-weight-bold text-center mt-2 title_font" ><%= link_to "#{user.name}", "#{user_path(user)}"%></a></div>
+          <div class="card-body">
+            <%= image_tag "#{user.image}", class: "rounded" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

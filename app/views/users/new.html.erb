@@ -1,11 +1,52 @@
-<%= form_for @user do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit %>
-<% end %>
+
+
+<style>
+.width {
+
+   width: 100%;
+   max-width: 800px;
+   padding: 15px;
+   margin: auto;
+
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 175px;
+  width: 175px;
+}
+</style>
+
+
+<br>
+
+<div class="width">
+<div class="jumbotron ">
+  <div class="container">
+    <%= form_for @user do |f| %>
+      <h1 class="display-2"><%= f.label :name %></h1>
+      <br>
+      <%= f.text_field :name, class: "form-control" %>
+      <hr class="my-3">
+      <h1 class="display-7"><%= f.label :username %><br></h1>
+      <%= f.text_field :username, class: "form-control" %><br>
+      <h1 class="display-8"><%= f.label :email %><br></h1>
+      <%= f.text_field :email,  class: "form-control" %><br>
+
+      <h1 class="display-9"><%= f.label :password %><br></h1>
+      <%= f.password_field :password, class: "form-control"  %>
+      <br>
+      <%= f.submit "Submit", class:"btn btn-success btn-m" %>
+    <% end %>
+    <br>
+  </div>
+</div>
+</div>
