@@ -33,11 +33,12 @@ img.rounded {
 
     </h1>
     <hr class="my-3">
-    <h1 class="display-7"><%= @user.username %><br></h1>
-    <h1 class="display-8"><%= @user.email %><br></h1>
+    <h1 class="display-7">Username:  <%= @user.username %><br></h1>
+    <h2 class="display-6">Score:  <%= @user.total_score %><br></h2>
+    <h3 class="display-8">Email:  <%= @user.email %><br></h3>
     <p class="lead"><br>
-      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Play</a>
-      <a class="btn btn-primary btn-lg" href="<%="http://localhost:3000/users/#{@user.id}/edit/"%>" role="button">Edit</a>
+      <a class="btn btn-primary btn-m" href="http://localhost:3000/play/" role="button">Play</a>
+      <a class="btn btn-primary btn-m" href="<%="http://localhost:3000/users/#{@user.id}/edit/"%>" role="button">Edit</a>
     </p>
   </div>
 </div>

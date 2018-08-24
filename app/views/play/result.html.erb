@@ -40,15 +40,16 @@
     </tr>
   </thead>
   <tbody>
-    <% @users = @challenge.users.sort{|x| x.total_score} %>
+    <% @user_challenges = @user_challenges.sort_by {|x| -x[:score]}
+ %>
     <%@i = 0%>
 
-    <% @users.each do |user| %>
+    <% @user_challenges.each do |user_challenge| %>
     <tr>
       <th scope="row"> <%= @i+1 %></th>
       <%@i = @i + 1%>
-      <td><%=  "@" + user.name %></td>
-      <td><%= user.total_score %> </td>
+      <td><%=  "@" + User.find(user_challenge.user_id).username %></td>
+      <td><%= user_challenge.score %> </td>
     <tr>
 
     <% end %>
