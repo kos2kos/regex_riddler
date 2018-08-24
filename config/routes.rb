@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Play page
   get '/play', to: "play#play", as: "play"
   get '/play/:id', to: "play#play_specific", as: "play_specific"
-  post"/result", to: "play#result", as: "result"
+  post '/result', to: "play#result", as: "result"
 
   # Session Controller
   get '/login', to: 'session#new', as: 'login'
