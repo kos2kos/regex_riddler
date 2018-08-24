@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/play', to: "play#play", as: "play"
   get '/play/:id', to: "play#play_specific", as: "play_specific"
   post '/result', to: "play#result", as: "result"
+  get '/result', to: "play#play" #Keeps user from hitting error page when refreshing results
 
   # Session Controller
   get '/login', to: 'session#new', as: 'login'

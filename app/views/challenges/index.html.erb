@@ -13,7 +13,7 @@
       <th scope="row"> <%= @i+1 %></th>
       <%@i = @i + 1%>
       <td>Easy</td>
-      <td><%= link_to challenge.name, challenge_path(challenge) %></td>
+      <td><%= link_to challenge.name, play_specific_path(challenge) %></td>
       <td><%= "@" + User.find(challenge.user_id).name %> </td>
     <tr>
 
