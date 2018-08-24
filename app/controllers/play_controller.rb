@@ -24,8 +24,7 @@ class PlayController < ApplicationController
     render :result
   end
 
-  private
-
+   
   def play_params
     params.require(:play).permit(:name, :trial, :solution, :regex)
   end

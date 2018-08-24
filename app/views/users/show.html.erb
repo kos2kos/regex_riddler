@@ -27,17 +27,42 @@ img.rounded {
 <div class="jumbotron ">
   <div class="container">
     <h1 class="display-2"><%= @user.name %>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= image_tag 'nkosi.jpg', class: "rounded" %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= image_tag "#{@user.image}", class: "rounded" %>
+
+
     </h1>
     <hr class="my-3">
     <h1 class="display-7"><%= @user.username %><br></h1>
     <h1 class="display-8"><%= @user.email %><br></h1>
     <p class="lead"><br>
       <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Play</a>
-      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Upload</a>
       <a class="btn btn-primary btn-lg" href="<%="http://localhost:3000/users/#{@user.id}/edit/"%>" role="button">Edit</a>
     </p>
   </div>
 </div>
+
+<table class="table table-hover table-light">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Difficulty</th>
+      <th scope="col">Title</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.user_challenges.each do |user_challenge| %>
+    <tr>
+      <th scope="row"> <%= @i+1 %></th>
+      <%@i = @i + 1%>
+      <td>Easy</td>
+      <td><%=  Challenge.find(user_challenge.challenge_id).name %></td>
+      <td><%= user_challenge.score %> </td>
+    <tr>
+
+    <% end %>
+  </tbody>
+</table>
+
 </div>

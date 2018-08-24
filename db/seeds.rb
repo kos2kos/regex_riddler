@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Image.destroy_all
+bear = Image.create(name: "bear.svg")
+bear = Image.create(name: "bee.svg")
+bear = Image.create(name: "frog.svg")
+bear = Image.create(name: "giraffe.svg")
+bear = Image.create(name: "hedgehog.svg")
+bear = Image.create(name: "hen.svg")
+bear = Image.create(name: "ladybug.svg")
+bear = Image.create(name: "monkey.svg")
+bear = Image.create(name: "octopus.svg")
+bear = Image.create(name: "snake.svg")
