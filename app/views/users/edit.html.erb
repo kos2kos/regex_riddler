@@ -1,27 +1,5 @@
-<%= form_for @user do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.submit %>
-<% end %>
-<br>
-<br>
-
-<%= form_tag user_path(@user), method: "delete" do %>
-  <%= submit_tag "Delete User" %>
-<% end %>
-
-
-
-
-
-
 <style>
 .width {
-   /* These two lines are counted as one :-)       */
    width: 100%;
    max-width: 800px;
    padding: 15px;
@@ -44,21 +22,26 @@ img.rounded {
 }
 </style>
 
+<br>
+
 <div class="width">
 <div class="jumbotron ">
   <div class="container">
-    <h1 class="display-2"><%= @user.name %>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= image_tag 'nkosi.jpg', class: "rounded" %>
-    </h1>
-    <hr class="my-3">
-    <h1 class="display-7"><%= @user.username %><br></h1>
-    <h1 class="display-8"><%= @user.email %><br></h1>
-    <p class="lead"><br>
-      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Play</a>
-      <a class="btn btn-primary btn-lg" href="http://localhost:3000/play/" role="button">Upload</a>
-      <a class="btn btn-primary btn-lg" href="<%="http://localhost:3000/users/#{@user.id}/edit/"%>" role="button">Edit</a>
-    </p>
+    <%= form_for @user, :url => user_path(@user)do |f| %>
+      <h1 class="display-2"><%= f.label :name %></h1>
+      <br>
+      <%= f.text_field :name, class: "form-control" %>
+      <hr class="my-3">
+      <h1 class="display-7"><%= f.label :username %><br></h1>
+      <%= f.text_field :username, class: "form-control" %><br>
+      <h1 class="display-8"><%= f.label :email %><br></h1>
+      <%= f.text_field :email,  class: "form-control" %><br>
+      <%= f.submit "Update", class:"btn btn-success btn-m" %>
+    <% end %>
+    <br>
+    <%= form_tag user_path(@user), method: "delete" do %>
+      <%= submit_tag "Delete User", class:"btn btn-danger btn-m" %>
+    <% end %>
   </div>
 </div>
 </div>

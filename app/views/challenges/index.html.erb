@@ -9,11 +9,14 @@
   </thead>
   <tbody>
     <% @challenges.each do |challenge| %>
+    <tr>
       <th scope="row"> <%= @i+1 %></th>
       <%@i = @i + 1%>
       <td>Easy</td>
       <td><%= link_to challenge.name, challenge_path(challenge) %></td>
-      <td>@kos</td>
+      <td><%= "@" + User.find(challenge.user_id).name %> </td>
+    <tr>
+
     <% end %>
   </tbody>
 </table>

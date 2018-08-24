@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @i = 0
+    @image = Image.all.sample
+
   end
 
   def new
@@ -17,6 +20,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image = Image.all.sample.name
     if @user.save
       redirect_to user_path(@user)
     else

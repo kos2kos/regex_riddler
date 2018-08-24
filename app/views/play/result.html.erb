@@ -1,15 +1,58 @@
 
+<style>
+.width {
+   width: 100%;
+   max-width: 800px;
+   padding: 15px;
+   margin: auto;
+}
+
+.alert-width{
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px;
+  margin: auto;
+}
+</style>
+<br>
 <% if @challenge.result%>
-  <div class="alert alert-success text-center" role="alert">
+  <div class="alert alert-success text-center alert-width" role="alert">
   <h4 class="alert-heading">🏆You Win🏆</h4>
   <p>Aww yeah, shouts out you</p>
   <%= @score %>
   <hr>
-</div>
 
 <% else %>
-  <div class="alert alert-danger text-center" role="alert">
+  <div class="alert alert-danger text-center alert-width" role="alert">
   <h4 class="alert-heading">Sorry.... 😔</h4>
   <p>Try again </p>
   <hr>
 <%end%>
+<br>
+
+
+<table class="table table-hover table-light width ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">@username</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users = @challenge.users.sort{|x| x.total_score} %>
+    <%@i = 0%>
+
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"> <%= @i+1 %></th>
+      <%@i = @i + 1%>
+      <td><%=  "@" + user.name %></td>
+      <td><%= user.total_score %> </td>
+    <tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+</div>

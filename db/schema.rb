@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_23_134821) do
+ActiveRecord::Schema.define(version: 2018_08_24_132841) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2018_08_23_134821) do
     t.string "regex"
     t.integer "user_id"
     t.string "description"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_challenges", force: :cascade do |t|
@@ -40,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_134821) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.integer "total_score", default: 0
+    t.string "image", default: "32"
   end
 
 end
