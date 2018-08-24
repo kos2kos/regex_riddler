@@ -9,14 +9,13 @@ class Challenge < ApplicationRecord
   validates :solution, presence: true
   validates :regex, presence: true
   validates :description, presence: true
-  
-  
+
   def to_regex(regex = self.regex)
-    # byebug
     Regexp.new(regex)
   end
+
   def match_value(regex)
-    self.trial.scan(regex)
+    self.trial.scan(regex).flatten.map {|word| word.strip}
   end
   
   def total_matches
@@ -24,7 +23,7 @@ class Challenge < ApplicationRecord
   end
   
   def result
-      self.solution.split(',') == match_value(self.to_regex)
+      self.solution.split(',').map {|word| word.strip} == match_value(self.to_regex)
   end
   
   def to_s
