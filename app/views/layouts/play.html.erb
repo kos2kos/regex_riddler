@@ -20,9 +20,15 @@
           <li class="nav-item">
             <a class="nav-link custom-link" href="http://localhost:3000/play">Play</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link custom-link" href="http://localhost:3000/login">Login</a>
-          </li>
+          <% if session[:user_id].nil? %>
+                <li class="nav-item">
+                  <a class="nav-link custom-link" href="/login">Login</a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link custom-link" href="/logout">Logout</a>
+                </li>
+              <% end %>
         </ul>
       </div>
     </nav>

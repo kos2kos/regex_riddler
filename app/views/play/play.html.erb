@@ -1,6 +1,6 @@
 <div class="text-center">
   <br><br><br><br>
-<%= form_tag "/result", class: 'form-signin text-center', method: :post do |f| %>
+<%= form_tag "/result", class: 'form-signin text-center', method: :post, id: "play_form" do |f| %>
   <h1 class="display-7"><%= @challenge.trial %></h1>
   <%= hidden_field_tag :id, "#{@challenge.id}" %>
   <h6><%= "Description: Do The thing" %></h6>
