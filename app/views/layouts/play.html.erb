@@ -9,36 +9,38 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-      <nav class="navbar navbar-light bg-orange" >
-        <a class="navbar-brand" href="#">
-          <%= image_tag 'logo.png', class: "nav-bar-img" %> &nbsp;&nbsp;&nbsp;<span class="font-weight-bold" style="color: red;">/</span><span class="font-weight-bold" style="text-shadow: 1px 0 darkcyan;">Regex Riddler</span><span class="font-weight-bold" style="color: red;">/</span>
-        </a>
-        <nav class=" navbar-expand-lg  bg-orange">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link custom-link font-weight-bold" href="/play">Play</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link custom-link font-weight-bold" href="/challenges">Challenges</a>
-              </li>
-              <% if session[:user_id].nil? %>
+    <body>
+        <nav class="navbar navbar-light bg-orange" >
+          <a class="navbar-brand" href="#">
+            <%= image_tag 'logo.png', class: "nav-bar-img" %> &nbsp;&nbsp;&nbsp;<span class="font-weight-bold" style="color: red;">/</span><span class="font-weight-bold" style="text-shadow: 1px 0 #31444b;">Regex Riddler</span><span class="font-weight-bold" style="color: red;">/</span>
+          </a>
+          <nav class=" navbar-expand-lg  bg-orange">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link custom-link font-weight-bold" href="/login">Login</a>
+                  <a class="nav-link custom-link font-weight-bold" href="/play"><span class="font-weight-bold" style="color: red;">&nbsp;/ </span>Play</a>
                 </li>
-              <% else %>
                 <li class="nav-item">
-                  <a class="nav-link custom-link font-weight-bold" href="/logout">Logout</a>
+                  <a class="nav-link custom-link font-weight-bold" href="/users"><span class="font-weight-bold" style="color: red;">&nbsp;/ </span>Users</a>
                 </li>
-              <% end %>
-            </ul>
-          </div>
+                <li class="nav-item">
+                  <a class="nav-link custom-link font-weight-bold" href="/challenges"><span class="font-weight-bold" style="color: red;">&nbsp;/ </span>Challenges</a>
+                </li>
+                <% if session[:user_id].nil? %>
+                  <li class="nav-item">
+                    <a class="nav-link custom-link font-weight-bold" href="/login"><span class="font-weight-bold" style="color: red;">&nbsp;/ </span>Login</a>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <a class="nav-link custom-link font-weight-bold" href="/logout"><span class="font-weight-bold" style="color: red;">&nbsp;/ </span>Logout</a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </nav>
         </nav>
-      </nav>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </body>
+  </html>

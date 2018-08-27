@@ -12,14 +12,39 @@ bear = Image.create(name: "ladybug.svg")
 bear = Image.create(name: "monkey.svg")
 bear = Image.create(name: "octopus.svg")
 bear = Image.create(name: "snake.svg")
+
+bear = Image.create(name: "antelope.svg")
+bear = Image.create(name: "buffalo.svg")
+bear = Image.create(name: "camel.svg")
+bear = Image.create(name: "cat.svg")
+bear = Image.create(name: "dog_1.svg")
+bear = Image.create(name: "dog.svg")
+bear = Image.create(name: "donkey.svg")
+bear = Image.create(name: "elephant.svg")
+bear = Image.create(name: "fox.svg")
+bear = Image.create(name: "hippopotamus.svg")
+
+bear = Image.create(name: "horse.svg")
+bear = Image.create(name: "kangaroo.svg")
+bear = Image.create(name: "lion.svg")
+bear = Image.create(name: "panda.svg")
+bear = Image.create(name: "rhinoceros.svg")
+
+bear = Image.create(name: "snail.svg")
+bear = Image.create(name: "tiger.svg")
+bear = Image.create(name: "wolf.svg")
+bear = Image.create(name: "zebra.svg")
+
 #======================================================================================================
 #===============> Users <==============================================================================
 #======================================================================================================
-user1 = User.create(name: "Nkosi", username: "kos2kos", email: "Nkosi@example.com", password_digest: User.digest("Nkosi"))
-user2 = User.create(name: "Gabe", username: "NamelessHero", email: "gabedbatista@example.com", password_digest: User.digest("Gabe"))
-user3 = User.create(name: "Prince", username: "PrinceNeverLies", email: "ThePrince@example.com", password_digest: User.digest("Prince"))
-user4 = User.create(name: "Eric", username: "YourBreaksAreTooLong!", email: "eric@example.com", password_digest: User.digest("Eric"))
-user5 = User.create(name: "Tony", username: "IdkButIllTry", email: "tony@example.com", password_digest: User.digest("Tony"))
+User.destroy_all
+user1 = User.create(name: "Nkosi", username: "kos2kos", email: "Nkosi@example.com", password_digest: User.digest("Nkosi"), image: "hedgehog.svg")
+
+user2 = User.create(name: "Gabe", username: "NamelessHero", email: "gabedbatista@example.com", password_digest: User.digest("Gabe"),image: "bear.svg" )
+user3 = User.create(name: "Prince", username: "PrinceNeverLies", email: "ThePrince@example.com", password_digest: User.digest("Prince"),image: "monkey.svg" )
+user4 = User.create(name: "Eric", username: "YourBreaksAreTooLong!", email: "eric@example.com", password_digest: User.digest("Eric"),image: "octopus.svg")
+user5 = User.create(name: "Tony", username: "IdkButIllTry", email: "tony@example.com", password_digest: User.digest("Tony"),image: "snake.svg")
 
 #======================================================================================================
 #===============> Challenges <=========================================================================

@@ -5,8 +5,8 @@
   <%= hidden_field_tag :id, "#{@challenge.id}" %>
   <h6><%= @challenge.description %></h6>
   <%= label_tag :regex, nil, class:"sr-only" %><br>
-  <p><%= text_field_tag :regex, nil, class: "form-control shadow p-3",
-    placeholder: "              / enter regex here! /  " %></p>
+  <p><%= text_field_tag :regex, nil, style:"text-align: center;", autocomplete: "off", class: "form-control shadow p-3",
+    placeholder: "/ enter regex here! /" %></p>
   <button type="submit" class="btn btn-lg btn-primary btn-block"> Submit </button>
   <span id="time"></span>
   <input type="hidden" name="time_left" id="time_left" value"45">

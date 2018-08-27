@@ -27,9 +27,9 @@
   <h4 class="alert-heading">Sorry.... 😔</h4>
   <p>Try again </p>
 
-  <p>Regex: /<span style="color: red;"><%= @challenge.regex %></span>/</p>
-  <p>Expected: <span style="color: red;"><%= @challenge.solution.split(',').map {|word| word.strip} %></span></p>
-  <p>Got: <span style="color: red;"><%= @challenge.match_value(/#{@challenge.regex}/) %></span></p>
+  <p> <span style="font-weight:bold;"> Regex:</span> /<span style="color: red;"><%= @challenge.regex %></span>/</p>
+  <p><span style="font-weight:bold;">Expected:</span> <span style="color: green; "><%= @challenge.solution.split(',').map {|word| word.strip} %></span></p>
+  <p><span style="font-weight:bold;">Got:</span> <span style="color: red;"><%= @challenge.match_value(/#{@challenge.regex}/) %></span></p>
   <hr>
 <%end%>
 <br>
